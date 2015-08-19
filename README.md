@@ -3,9 +3,16 @@
 
 > As of iOS 7 and Mac OS X 10.9 Mavericks, Foundation has the ability to specify localized strings according to pluralization and grammar rules. You can find more information about it in the [Localized Property List File](https://developer.apple.com/library/mac/releasenotes/Foundation/RN-Foundation/#//apple_ref/doc/uid/TP30000742-CH2-SW56) section of the Foundation release notes.
 
-# Why the hell did I clone the repo?
+## Why the hell did I clone the repo?
 
 `TTTLocalizedPluralString` has great logics for different locale plural rules. But it does one extra thing - always formats the sting with given `count` argument. And always like `%d`. If you need to keep localized string with something like "You have %@ banana(s) left." - good luck with it. And this clone is exactly for that - it uses brilliance of TTTLocalizedPluralString idea, and let's you to format your strings yourself as you want.
+
+use my repo in your project:
+```
+pod 'TTTLocalizedPluralString', :tag => '0.0.11', :git => 'https://github.com/gelosi/TTTLocalizedPluralString.git'
+```
+
+## a bit about `NSLocalizedString` macro
 
 `NSLocalizedString` and its related macros make localizing Mac and iOS applications relatively straight-forward and simple. It falls down, however, when having to deal with strings whose conjugations change based on a dynamic count value. In such cases, you may have seen code like this:
 

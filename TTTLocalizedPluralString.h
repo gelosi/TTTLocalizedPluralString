@@ -22,20 +22,28 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSString * const kTTTZeroPluralRule;
+extern NSString * const kTTTOnePluralRule;
+extern NSString * const kTTTTwoPluralRule;
+extern NSString * const kTTTFewPluralRule;
+extern NSString * const kTTTManyPluralRule;
+extern NSString * const kTTTOtherPluralRule;
+
 extern NSString * TTTLocalizedPluralStringKeyForCountAndSingularNoun(NSUInteger count, NSString *singular);
 extern NSString * TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(NSUInteger count, NSString *singular, NSString *languageCode);
 
 #define TTTLocalizedPluralString(count, singular, comment) \
-[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:nil]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:singular table:nil]
 
 #define TTTLocalizedPluralStringForLanguage(count, singular, languageCode) \
-[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(count, singular, languageCode) value:@"" table:nil]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(count, singular, languageCode) value:singular table:nil]
 
 #define TTTLocalizedPluralStringFromTable(count, singular, tbl, comment) \
-[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:singular table:(tbl)]
 
 #define TTTLocalizedPluralStringFromTableInBundle(count, singular, tbl, bundle, comment) \
-[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)]
+[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:singular table:(tbl)]
 
 #define TTTLocalizedPluralStringWithDefaultValue(count, singular, tbl, bundle, val, comment) \
 [bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:(val) table:(tbl)]
