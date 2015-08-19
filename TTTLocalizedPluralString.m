@@ -522,5 +522,5 @@ NSString * TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(NSUInte
         return nil;
     }
 
-    return [NSString stringWithFormat:@"%%d %@ (plural rule: %@)", singular, pluralRule];
+    return [NSString stringWithFormat:@"%@#%@", singular, pluralRule];
 }

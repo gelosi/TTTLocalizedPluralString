@@ -26,16 +26,16 @@ extern NSString * TTTLocalizedPluralStringKeyForCountAndSingularNoun(NSUInteger 
 extern NSString * TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(NSUInteger count, NSString *singular, NSString *languageCode);
 
 #define TTTLocalizedPluralString(count, singular, comment) \
-[NSString stringWithFormat:[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:nil], count]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:nil]
 
 #define TTTLocalizedPluralStringForLanguage(count, singular, languageCode) \
-[NSString stringWithFormat:[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(count, singular, languageCode) value:@"" table:nil], count]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNounForLanguage(count, singular, languageCode) value:@"" table:nil]
 
 #define TTTLocalizedPluralStringFromTable(count, singular, tbl, comment) \
-[NSString stringWithFormat:[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)], count]
+[[NSBundle mainBundle] localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)]
 
 #define TTTLocalizedPluralStringFromTableInBundle(count, singular, tbl, bundle, comment) \
-[NSString stringWithFormat:[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)], count]
+[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:@"" table:(tbl)]
 
 #define TTTLocalizedPluralStringWithDefaultValue(count, singular, tbl, bundle, val, comment) \
-[NSString stringWithFormat:[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:(val) table:(tbl)], count]
+[bundle localizedStringForKey:TTTLocalizedPluralStringKeyForCountAndSingularNoun(count, singular) value:(val) table:(tbl)]
