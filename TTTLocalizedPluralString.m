@@ -25,12 +25,12 @@
 // Source: Unicode Common Locale Data Repository Plural Rules
 // http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
 
-static NSString * const kTTTZeroPluralRule = @"zero";
-static NSString * const kTTTOnePluralRule = @"one";
-static NSString * const kTTTTwoPluralRule = @"two";
-static NSString * const kTTTFewPluralRule = @"few";
-static NSString * const kTTTManyPluralRule = @"many";
-static NSString * const kTTTOtherPluralRule = @"other";
+NSString * const kTTTZeroPluralRule = @"zero";
+NSString * const kTTTOnePluralRule = @"one";
+NSString * const kTTTTwoPluralRule = @"two";
+NSString * const kTTTFewPluralRule = @"few";
+NSString * const kTTTManyPluralRule = @"many";
+NSString * const kTTTOtherPluralRule = @"other";
 
 static NSString * TTTArabicPluralRuleForCount(NSUInteger count) {
     switch (count) {
